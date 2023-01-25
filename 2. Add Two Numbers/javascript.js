@@ -14,7 +14,7 @@ var addTwoNumbers = function (l1, l2) {
   // Initialize a dummy node and a pointer to keep track of the current position
   let dummyHead = new ListNode(0);
   let curr = dummyHead;
-  // Initialize a carry variable
+  // Initialize a carry-over variable
   let carry = 0;
   // Iterate through both linked lists
   while (l1 !== null || l2 !== null) {
@@ -43,3 +43,5 @@ var addTwoNumbers = function (l1, l2) {
   }
   return dummyHead.next;
 };
+
+//time and space complexity is O(max(n, m)) where n is size of l1 and m is size of l2
