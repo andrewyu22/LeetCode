@@ -12,3 +12,5 @@ var twoSum = function (nums, target) {
     map.set(nums[i], i);
   }
 };
+
+// Time complexity is O(n) and space complexity is also O(n)
