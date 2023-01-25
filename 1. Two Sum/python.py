@@ -10,3 +10,5 @@ class Solution:
                 return [d[target - num], i]
             # If the complement does not exist, add the current number and its index to the dictionary
             d[num] = i
+
+# Time complexity is O(n) and space complexity is also O(n)
