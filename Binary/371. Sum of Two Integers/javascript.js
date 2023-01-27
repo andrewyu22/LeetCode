@@ -1,16 +1,14 @@
-/**
- * @param {number} n - a positive integer
- * @return {number} - a positive integer
- */
-var reverseBits = function (n) {
-  let reversed = 0;
-  for (let i = 0; i < 32; i++) {
-    // Shift the input number to the right to get the rightmost bit
-    let bit = n & 1;
-    // Shift the reversed number to the left to make room for the next bit
-    reversed = (reversed << 1) | bit;
-    // Shift the input number to the right to get the next bit
-    n = n >> 1;
+var getSum = function (a, b) {
+  // Iterate until there is no carry
+  while (b !== 0) {
+    // Carry now contains common set bits of a and b
+    let carry = a & b;
+    // Sum of bits of a and b where at least one of the bits is not set
+    a = a ^ b;
+    // Carry is shifted by one so that adding it to a gives the required sum
+    b = carry << 1;
   }
-  return reversed >>> 0;
+  return a;
 };
+
+// Time & Space Complexity: O(1)
