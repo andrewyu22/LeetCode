@@ -1,0 +1,17 @@
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+         # create a list to store the minimum number of coins for each value
+        dp = [float('inf')]*(amount+1)
+        # initialize the first value with 0 as it takes 0 coins to make 0 cents
+        dp[0] = 0
+        # loop through the coins
+        for coin in coins:
+            # loop through the values from the coin value to the total amount
+            for i in range(coin, amount+1):
+                # update the minimum number of coins for the current value
+                dp[i] = min(dp[i], dp[i-coin]+1)
+        # return -1 if the amount cannot be made with the given coins
+        return -1 if dp[amount] == float('inf') else dp[amount]
+
+# Time Complexity: O(a * c) where a is the amount and c is the number of coins
+# Space Complexity: O(a)
